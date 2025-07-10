@@ -31,6 +31,10 @@ router.post('/register', [
     .isLength({ min: 6 })
     .withMessage('Password must be at least 6 characters')
 ], async (req, res) => {
+    // Check if registration is disabled
+    if (process.env.REGISTER_DISABLED === 'true') {
+        return res.status(403).json({ message: 'Registration is currently disabled' });
+        }
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
