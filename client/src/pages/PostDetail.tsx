@@ -242,7 +242,7 @@ const PostDetail: React.FC = () => {
         </div>
 
         {/* Author Actions */}
-        {isAuthor && (
+        {(isAuthor || user?.role === 'admin') && (
           <div className="flex items-center space-x-2 mb-6">
             <Link
               to={`/edit/${post._id}`}

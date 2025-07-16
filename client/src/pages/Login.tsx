@@ -57,7 +57,7 @@ const Login: React.FC = () => {
             Sign in to your account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            {import.meta.env.VITE_REGISTER_DISABLED ? (
+            {import.meta.env.VITE_REGISTER_DISABLED === 'true'? (
               "Account registration is currently disabled"
             ) : (
               <>

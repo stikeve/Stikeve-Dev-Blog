@@ -108,7 +108,7 @@ router.get('/id/:id', auth, [
     }
 
     // Check if user is the author
-    if (post.author._id.toString() !== req.user._id.toString()) {
+    if (post.author._id.toString() !== req.user._id.toString() && req.user.role !== 'admin') {
       return res.status(403).json({ message: 'Access denied - not the author' });
     }
 
@@ -277,7 +277,7 @@ router.put('/:id', auth, [
     }
 
     // Check if user is the author
-    if (post.author.toString() !== req.user._id.toString()) {
+    if (post.author.toString() !== req.user._id.toString() && req.user.role !== 'admin') {
       return res.status(403).json({ message: 'Access denied' });
     }
 

@@ -7,7 +7,8 @@ I am building this project to showcase my skills. I will be adding more integrat
 ---
 ## Whats New
 
-
+- Admin Features
+- Fixed bugs related to disabled registration functionality.
 ---
 
 ## Features
@@ -17,6 +18,7 @@ I am building this project to showcase my skills. I will be adding more integrat
 - **Blog Posts:** Create, edit, delete, and view posts with Markdown support.
 - **Tags & Privacy:** Tag posts as `technical` or `personal`, set posts as public or private.
 - **Excerpt Generation:** Auto-generates excerpts if not provided.
+- **Admin:** User with admin privileges can edit or delete any user's post.
 - **Responsive UI:** Built with Tailwind CSS and React.
 
 ---

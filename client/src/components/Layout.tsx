@@ -120,23 +120,25 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   >
                     Login
                   </Link>
-                  {!import.meta.env.VITE_REGISTER_DISABLED ? (
+                  {import.meta.env.VITE_REGISTER_DISABLED === 'true' ? (
+                    <span
+                      className="bg-blue-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-not-allowed relative group"
+                      tabIndex={0}
+                    >
+                      Sign Up
+                      <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity pointer-events-none z-10">
+                        Registration disabled by the developer
+                      </span>
+                    </span>
+
+                  ) : (
                     <Link
                       to="/register"
                       className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                     >
                       Sign Up
                     </Link>
-                  ) : (
-                    <span
-                      className="bg-blue-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-not-allowed relative group"
-                      tabIndex={0}
-                    >
-                      Registration
-                      <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity pointer-events-none z-10">
-                        Registration disabled by the developer
-                      </span>
-                    </span>
+
                   )}
                 </div>
               )}
